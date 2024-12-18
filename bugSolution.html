@@ -1,0 +1,6 @@
+The problem was solved by ensuring the correct order of CSS imports and resolving any potential CSS conflicts.
+
+1. **Import Order:** Tailwind's CSS must be imported *after* any other stylesheets that may potentially override Tailwind styles. This ensures that Tailwind classes have precedence.
+2. **CSS Specificity:** Review other CSS rules to ensure they are not overriding Tailwind's styles due to higher specificity.  Check for id selectors or more specific class selectors that might be unintentionally taking precedence. 
+3. **Purge unused CSS (if using):** If you're purging unused CSS using PurgeCSS, verify the config to ensure that the classes you're using are not being removed. 
+4. **Inspect with Browser DevTools:** Use your browser's developer tools to inspect the element. Check the `Computed` tab to identify which styles are actually being applied and see where conflicts might occur.   Sometimes classes might not be fully applied (only partial application) so inspect that as well.
